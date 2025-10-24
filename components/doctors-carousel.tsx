@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { doctors } from "@/db/doctors"
+import  doctors  from "@/db/doctors"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export function DoctorsCarousel() {
@@ -35,7 +35,7 @@ export function DoctorsCarousel() {
     if (!scrollContainerRef.current) return
     const container = scrollContainerRef.current
     const itemWidth = container.querySelector("[data-doctor-item]")?.clientWidth || 0
-    const scrollAmount = itemWidth + 16 // item width + gap
+    const scrollAmount = itemWidth + 16 
     container.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",

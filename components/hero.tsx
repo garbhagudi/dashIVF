@@ -37,7 +37,7 @@ export function Hero({ images }: { images: Slide[] }) {
           className={`transition-opacity duration-500 ${index === i ? "opacity-100" : "opacity-0"} absolute inset-0`}
         >
           <Image
-            src={img.src || "/placeholder.svg"}
+            src={img.src}
             alt={img.alt}
             fill
             className="object-cover"

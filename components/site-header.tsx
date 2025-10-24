@@ -32,7 +32,7 @@ export function Header() {
             alt="GarbhaGudi IVF Centre logo"
             width={128}
             height={28}
-            priority
+            priority={true}
             sizes="128px"
             className="h-8 md:h-14 w-auto"
           />

@@ -12,6 +12,8 @@ export function Footer() {
               width={200}
               height={50}
               className="h-auto w-40 mb-4"
+              quality={80}
+              
             />
             <div className="flex gap-2 text-sm text-gray-600 mt-4">
               <span>Terms of use</span>

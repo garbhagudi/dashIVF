@@ -1,4 +1,4 @@
-export const doctors = [
+const doctors = [
   {
     name: 'Dr Asha S Vijay',
     qualification: 'MBBS, DNB(OBG), DGO, PGD-RM&E',
@@ -4336,3 +4336,4 @@ export const doctors = [
     },
   },
 ];
+export default doctors;

@@ -14,7 +14,6 @@ export function LeadForm() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    // Placeholder: simulate success without network to keep it fast.
     await new Promise((r) => setTimeout(r, 600))
     setLoading(false)
     alert("Thanks! We’ll call you back shortly.")

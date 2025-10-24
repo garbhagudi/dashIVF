@@ -1,7 +1,6 @@
 "use client";
 import { Fragment, useEffect } from 'react';
 
-//Zoho Sales Iq Script:
 const useScript = (url: string, widgetCode: string): void => {
   useEffect(() => {
     const script = document.createElement('script');
