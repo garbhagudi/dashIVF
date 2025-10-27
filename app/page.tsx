@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Hero } from "@/components/hero";
 import { LeadForm } from "@/components/lead-form";
 import TreatmentsGrid from "@/components/treatments-grid";
@@ -8,15 +7,13 @@ import { Testimonials } from "@/components/testimonials";
 import { FAQ } from "@/components/faq";
 import { Header } from "@/components/site-header";
 import { Footer } from "@/components/site-footer";
-import { CiPercent, CiMedicalCase } from "react-icons/ci";
-import { BsBuildings, BsCurrencyRupee } from "react-icons/bs";
-import { GiMeditation } from "react-icons/gi";
-import { ImLab } from "react-icons/im";
 import SalesIQ from "@/components/SalesIQ";
 import RelatedSearches from "@/components/related-searches";
 import VideoTestimonialsCarousel from "@/components/video-testimonials-carousel";
 import { FloatingCallButton } from "@/components/floating-call-button";
 import { Suspense } from "react";
+import banners from "@/db/banners";
+import Features from "@/components/Features";
 
 export const metadata: Metadata = {
   title: "GarbhaGudi IVF Centre | Best IVF & Fertility Hospital in India",
@@ -63,20 +60,7 @@ export default function Page() {
           <div className="grid grid-cols-1 lg:grid-cols-6 items-stretch gap-y-2.5">
             <div className="lg:col-span-4">
               <Hero
-                images={[
-                  {
-                    src: "https://res.cloudinary.com/garbhagudiivf/image/upload/v1760101158/1-02_yyxrvi.webp",
-                    alt: "Family with newborn at IVF Centre",
-                  },
-                  {
-                    src: "https://res.cloudinary.com/garbhagudiivf/image/upload/v1760445537/Davanagere-02-02-1_s55l10.webp",
-                    alt: "Joyful couple celebrates pregnancy",
-                  },
-                  {
-                    src: "https://res.cloudinary.com/garbhagudiivf/image/upload/v1760177306/01-02_s8m5oa.webp",
-                    alt: "Joyful couple celebrates pregnancy",
-                  },
-                ]}
+                images={banners}
               />
             </div>
             <aside className="lg:col-span-2">
@@ -103,119 +87,7 @@ export default function Page() {
         </section>
 
         {/* Feature text + cards */}
-        <section className="container mx-auto px-4 md:px-6 py-10 md:py-14">
-          <header className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-balance tracking-tight text-center text-2xl font-bold leading-8 text-brandDark underline sm:text-3xl">
-              What makes GarbhaGudi IVF Centre special?
-            </h2>
-          </header>
-          <div className="mt-5 flex flex-col gap-1.5 text-center mx-auto">
-            <Image
-              src={"https://res.cloudinary.com/garbhagudiivf/image/upload/v1738903030/WebIcon-01_ywi7q3.webp".replace(
-                "/upload/",
-                "/upload/f_auto,q_auto,w_730,h_420,c_fill/"
-              )}
-              alt="Banner Image"
-              width={360}
-              height={400}
-              className="mx-auto w-full object-contain lg:w-3/5"
-            />
-            <strong>Best IVF centre in Bangalore</strong>
-            <p className="text-justify">
-              GarbhaGudi IVF Centre has been awarded as the{" "}
-              <strong>Best IVF centre in Bangalore</strong> by multiple
-              organizations and trusted by thousands of couples. GarbhaGudi is
-              your trusted partner in the journey to parenthood. We provide
-              advanced fertility treatments at an affordable price, making your
-              dreams of having a baby come true. Our transparent{" "}
-              <strong>IVF cost in Bangalore</strong> and personalized care plans
-              ensure you get the best treatment without hidden expenses. If
-              you’re searching for a reliable fertility centre close to you or a
-              leading IVF centre in your area, GarbhaGudi stands out with high
-              success rates, compassionate doctors, and world-class facilities.
-              Begin your journey today with GarbhaGudi – where hope
-              meets happiness.
-            </p>
-          </div>
-          <div className="sm:py-18 relative bg-white py-6" id="features">
-            <div className="mx-auto max-w-md sm:max-w-3xl lg:max-w-7xl">
-              <h2 className="mt-2 text-center font-heading text-2xl font-bold text-brandDark sm:text-3xl">
-                Our Versatile Approach
-              </h2>
-              <div className="mx-auto max-w-7xl">
-                <div className="py-3 lg:pt-8">
-                  <div>
-                    <div className="pb-2 text-justify">
-                      GarbhaGudi IVF Centre stands as the epitome of excellence,
-                      making it the{" "}
-                      <span className="font-bold">
-                        {" "}
-                        Best Fertility Hospital in Bangalore
-                      </span>
-                      . We take pride in offering a comprehensive range of{" "}
-                      <span className="font-bold">
-                        {" "}
-                        Infertility treatments
-                      </span>{" "}
-                      to cater to diverse needs, ensuring that every couple
-                      receives personalized care and attention.
-                    </div>{" "}
-                    <div className="pb-2 text-justify">
-                      As a prominent{" "}
-                      <span className="font-bold">
-                        {" "}
-                        Infertility Hospital in Bangalore
-                      </span>
-                      , our facility houses state-of-the-art infrastructure and
-                      cutting-edge technologies. Our dedicated team of fertility
-                      experts brings together years of experience and expertise
-                      to provide the highest level of care.
-                    </div>{" "}
-                    <div className="pb-2 text-justify">
-                      With a commitment to excellence, compassionate care, and a
-                      high success rate, GarbhaGudi IVF Centre has rightfully
-                      earned its reputation as the{" "}
-                      <span className="font-bold">
-                        {" "}
-                        Best Fertility Hospital in Bangalore
-                      </span>
-                      . Trust us to accompany you on your journey to parenthood
-                      and make your dreams of a complete family a reality.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {features?.map((feature) => (
-                    <div
-                      className="group mx-auto max-w-sm pt-3"
-                      key={feature?.id}
-                    >
-                      <div className="shadow-3xl h-full overflow-hidden rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-2xl">
-                        <div className="grid h-full grid-cols-6">
-                          <div className="col-span-1 flex h-full items-center justify-center bg-brandPink">
-                            <div className="text-4xl font-bold text-white">
-                              {feature?.icon}
-                            </div>
-                          </div>
-                          <div className="col-span-5 flex flex-col rounded-br-lg rounded-tr-lg border-2 border-brandPink px-2">
-                            <h3 className="mt-3 font-heading text-base font-semibold tracking-tight text-brandDark md:text-lg">
-                              {feature?.name}
-                            </h3>
-                            <p className="mt-2 pb-3 text-sm md:text-base">
-                              {feature?.content}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Features/>
 
         <div className="mx-auto max-w-4xl">
           <div className="mx-auto max-w-3xl text-center font-bold">
@@ -274,7 +146,6 @@ export default function Page() {
         </section>
         <RelatedSearches />
       </main>
-
       <Footer />
       <FloatingCallButton />
       <SalesIQ />
@@ -282,53 +153,4 @@ export default function Page() {
   );
 }
 
-const features = [
-  {
-    id: 1,
-    name: "High Success Rate",
-    icon: <CiPercent />,
-    content:
-      "GarbhaGudi has one of the highest IVF treatments success rates in the industry.",
-    link: "/features/success-rates-of-ivf",
-  },
-  {
-    id: 2,
-    name: "World Class Fertility Care",
-    icon: <BsBuildings />,
-    content:
-      "GarbhaGudi is Proud to have played a key role in bringing more than 15,000+ babies into the world since 2011.",
-    link: "/features/world-class-fertility-care",
-  },
-  {
-    id: 3,
-    name: "Top Fertility Specialists",
-    icon: <CiMedicalCase />,
-    content:
-      "Team of fertility specialists like gynecologists, embryologists, technicians and staff to help you conceive.",
-    link: "/fertility-experts",
-  },
-  {
-    id: 4,
-    name: "Affordable Treatments",
-    icon: <BsCurrencyRupee />,
-    content:
-      "GarbhaGudi offers Affordable Infertility treatment without any compromise on service or quality of medicines or services",
-    link: "/features/affordable-treatments",
-  },
-  {
-    id: 7,
-    name: "Holistic Approach",
-    icon: <GiMeditation />,
-    content:
-      "At GarbhaGudi we are committed to Treating infertility through the holistic mind-body-soul programs.",
-    link: "/features/holistic-approach",
-  },
-  {
-    id: 9,
-    name: "Best in Class Facilities",
-    icon: <ImLab />,
-    content:
-      "Our IVF Centers in Bangalore are equipped to handle the most challenging cases with state of the art technology at our disposal",
-    link: "/features/best-in-class-facilities",
-  },
-];
+
