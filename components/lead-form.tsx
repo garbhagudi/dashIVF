@@ -19,11 +19,10 @@ type LeadFormData = {
 }
 
 export function LeadForm() {
-  const router = useRouter() // ✅ from next/navigation (App Router compatible)
+  const router = useRouter() 
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  // ✅ Safer UTM & Page tracking
   const utmCampaign = searchParams.get('utm_campaign') || ''
   const pageVisit =
     typeof window !== 'undefined'
@@ -50,7 +49,6 @@ export function LeadForm() {
 
   const [loading, setLoading] = useState(false)
 
-  // ✅ Keep Page + UTM values updated dynamically
   useEffect(() => {
     setValue('UTM_Campaign', utmCampaign)
     setValue('Page_Visited', pageVisit)
@@ -67,7 +65,7 @@ export function LeadForm() {
 
       const res = await response.json()
       if (response.ok && res?.data?.[0]?.code === 'SUCCESS') {
-        router.push('/thank-you.html') // ✅ works in App Router
+        router.push('/thank-you.html')
       } else {
         console.error('Error submitting form:', res)
       }
@@ -94,7 +92,6 @@ export function LeadForm() {
           className="grid gap-3 max-w-md mx-auto w-full"
           aria-label="Lead capture form for free consultation"
         >
-          {/* Full Name */}
           <div>
             <Input
               id="Last_Name"
@@ -108,8 +105,6 @@ export function LeadForm() {
               </p>
             )}
           </div>
-
-          {/* Phone */}
           <div>
             <Input
               id="Phone"
@@ -130,8 +125,6 @@ export function LeadForm() {
               </p>
             )}
           </div>
-
-          {/* Email */}
           <div>
             <Input
               id="Email"
@@ -152,8 +145,6 @@ export function LeadForm() {
               </p>
             )}
           </div>
-
-          {/* Submit */}
           <Button
             type="submit"
             className="mt-2 rounded-full bg-[#ea4b6a] hover:bg-[#ee6f88]"
